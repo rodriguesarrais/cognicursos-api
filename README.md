@@ -121,3 +121,14 @@ A resposta incluirá:
 - `deepseek-chat` - Modelo de chat padrão do DeepSeek
 - `deepseek-lite` - Versão mais leve do modelo DeepSeek
 - `deepseek-v2` - Versão 2 do modelo DeepSeek
+
+Interface de administração: http://127.0.0.1:8003/admin/
+API Root: http://127.0.0.1:8003/api/
+Endpoints de categorias: http://127.0.0.1:8003/api/categorias/
+Endpoints de cursos: http://127.0.0.1:8003/api/cursos/
+Endpoints de configurações de IA: http://127.0.0.1:8003/api/configuracoes-ia/
+Endpoints de interações: http://127.0.0.1:8003/api/interacoes/
+Para usar a funcionalidade de IA com o DeepSeek, você precisará:
+* Criar uma categoria e um curso
+* Criar uma configuração de IA com sua chave do DeepSeek
+* Fazer uma requisição POST para /api/cursos/{id}/perguntar/ com a pergunta

@@ -42,7 +42,7 @@ class InteracaoSerializer(serializers.ModelSerializer):
         ]
 
 class PerguntaSerializer(serializers.Serializer):
-    curso_id = serializers.IntegerField()
+    curso_id = serializers.IntegerField(required=False)
     configuracao_id = serializers.IntegerField(required=False)
     pergunta = serializers.CharField(max_length=2000)
     contexto = serializers.CharField(max_length=5000, required=False) 

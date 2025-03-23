@@ -53,7 +53,7 @@ class CursoViewSet(viewsets.ModelViewSet):
             
         return queryset
     
-    @action(detail=True, methods=['post'])
+    @action(detail=True, methods=['post'], permission_classes=[permissions.AllowAny])
     def perguntar(self, request, pk=None):
         """
         Endpoint para fazer perguntas sobre um curso específico.
