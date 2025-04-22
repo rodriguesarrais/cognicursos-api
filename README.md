@@ -53,6 +53,9 @@ python manage.py runserver
 
 ## Endpoints da API
 
+### Usuarios
+
+
 ### Categorias
 
 - `GET /api/categorias/` - Listar todas as categorias
