@@ -1,5 +1,11 @@
+from django.contrib.auth.models import User
 from rest_framework import serializers
 from .models import Categoria, Curso, ConfiguracaoIA, Interacao
+
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['id', 'username', 'email', 'first_name', 'last_name', 'is_active']
 
 class CategoriaSerializer(serializers.ModelSerializer):
     class Meta:

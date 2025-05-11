@@ -19,6 +19,10 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
 from api import views
+from api.views import UserListCreateView, UserRetrieveUpdateDeleteView
+
+
+
 
 # Configuração do router do DRF
 router = routers.DefaultRouter()
@@ -32,4 +36,6 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/", include(router.urls)),
     path("api-auth/", include("rest_framework.urls", namespace="rest_framework")),
+    path('api/usuarios/', UserListCreateView.as_view(), name='user-list-create'),
+    path('api/usuarios/<int:pk>/', UserRetrieveUpdateDeleteView.as_view(), name='user-detail'),
 ]

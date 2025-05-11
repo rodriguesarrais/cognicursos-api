@@ -1,16 +1,28 @@
+from django.contrib.auth.models import User
 from django.shortcuts import render
-from rest_framework import viewsets, permissions, filters, status
+from rest_framework import viewsets, permissions, filters, status, generics
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from .models import Categoria, Curso, ConfiguracaoIA, Interacao
 from .serializers import (
     CategoriaSerializer, CursoSerializer, 
     ConfiguracaoIASerializer, InteracaoSerializer,
-    PerguntaSerializer
+    PerguntaSerializer, UserSerializer
 )
 from .langchain_utils import process_question
 
 # Create your views here.
+
+# Listar e Criar Usuários
+class UserListCreateView(generics.ListCreateAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
+# Obter, Atualizar e Excluir Usuário
+class UserRetrieveUpdateDeleteView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
 
 class CategoriaViewSet(viewsets.ModelViewSet):
     """
